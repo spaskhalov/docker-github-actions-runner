@@ -20,4 +20,8 @@ RUN chmod +x /actions-runner/install_actions.sh \
 COPY token.sh entrypoint.sh /
 RUN chmod +x /token.sh /entrypoint.sh
 
+RUN \
+  apt-get update && \
+  apt-get install -y git-lfs
+
 ENTRYPOINT ["/entrypoint.sh"]
